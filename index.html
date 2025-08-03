@@ -1,480 +1,1167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="It has distinguished collection of Arabic and European perfumes and makhammariyah" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Y&S Perfumes</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fffafc;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="description"
+    content="It has distinguished collection of Arabic and European perfumes and makhammariyah" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Y&S Perfumes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffafc;
+      color: #333;
+    }
 
-        header {
-            background: #000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-        nav {
-            background: #111;
-            text-align: center;
-        }
+    nav {
+      background: #111;
+      text-align: center;
+    }
 
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            display: inline-block;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
 
-        nav a:hover {
-            background-color: #444;
-        }
+    nav a:hover {
+      background-color: #444;
+    }
 
-        .hero {
-            background: url('https://cdn.mos.cms.futurecdn.net/VzUqgr8PfbNcfXrpzeVBPE-1440-80.jpg.webp') center/cover no-repeat;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
+    .hero {
+      background: url('https://cdn.mos.cms.futurecdn.net/VzUqgr8pfbNcfXrpzeVBPE-1440-80.jpg.webp') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
 
-        .hero h1 {
-            font-size: 3em;
-            background: rgba(0, 0, 0, 0.5);
-            display: inline-block;
-            padding: 10px 20px;
-        }
+    .hero h1 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+    }
 
-        .section {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+    .section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-        .price-item {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .product {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
 
-        .product-card {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    .product img {
+      width: 170px;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin: 0 auto;
+      display: block;
+    }
 
-        .product-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
+    .product h3 {
+      margin: 15px 0 5px;
+    }
 
-        .add-to-cart-btn {
-            background: #000;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+    .product p {
+      margin: 0;
+      color: #777;
+    }
 
-        .add-to-cart-btn:hover {
-            background: #444;
-        }
+    .add-to-cart-btn {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+    }
 
-        .cart-section {
-            background: #f0f0f0;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
+    .add-to-cart-btn:hover {
+      background: #0056b3;
+    }
 
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
+    .sizes {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+      text-align: left;
+    }
 
-        .cart-total {
-            text-align: right;
-            padding-top: 10px;
-            font-weight: bold;
-        }
+    .sizes li {
+      margin: 5px 0;
+      font-size: 0.95em;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 4px;
+    }
 
-        .order-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+    .sizes .price {
+      font-weight: bold;
+      color: #d63384;
+    }
 
-        .order-form input[type="text"],
-        .order-form input[type="email"],
-        .order-form input[type="tel"],
-        .order-form textarea,
-        .order-form select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+    .pricing-info {
+      background: #e8f4f8;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+    }
 
-        .order-form button {
-            background: #000;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
+    .pricing-info h3 {
+      color: #007BFF;
+      margin-top: 0;
+    }
 
-        .order-form button:hover {
-            background: #444;
-        }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
 
-        footer {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-    </style>
+    .price-item {
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .price-item .size {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .price-item .price {
+      color: #d63384;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    /* Order Section Styles */
+    .order-section {
+      background: #f8f9fa;
+      border: 2px solid #28a745;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+
+    .order-section h2 {
+      color: #28a745;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cart-container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .cart-item-details {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .cart-item-price {
+      font-weight: bold;
+      color: #d63384;
+      margin-left: 20px;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin: 0 15px;
+    }
+
+    .quantity-btn {
+      background: #007BFF;
+      color: white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .quantity-btn:hover {
+      background: #0056b3;
+    }
+
+    .quantity-display {
+      margin: 0 10px;
+      font-weight: bold;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .remove-btn {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    .remove-btn:hover {
+      background: #c82333;
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      color: #28a745;
+      padding: 15px;
+      border-top: 2px solid #28a745;
+      margin-top: 15px;
+    }
+
+    .order-form {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #007BFF;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+    .submit-order-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-order-btn:hover {
+      background: #218838;
+    }
+
+    .submit-order-btn:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #666;
+      padding: 40px;
+      font-style: italic;
+    }
+
+    .quick-add-section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .quick-add-form {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr auto;
+      gap: 15px;
+      align-items: end;
+    }
+
+    .quick-add-btn {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .quick-add-btn:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .quick-add-form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .quantity-controls {
+        margin: 10px 0;
+      }
+    }
+
+    /* Contact link styling */
+    #contact a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    #contact a:visited {
+      color: #007BFF;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #28a745;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      animation: slideIn 0.5s ease;
+    }
+
+    .notification.error {
+      background: #dc3545;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Y&S Perfumes</h1>
-        <p>Luxury in Every Scent</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#order">Order</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <section id="home" class="hero">
-        <h1>Discover Your Signature Scent</h1>
-    </section>
+  <header>
+    <h1>Y&S Perfumes</h1>
+    <p>Luxury in Every Scent</p>
+  </header>
 
-    <section id="pricing" class="section">
-        <h2>Unified Pricing for All Perfumes</h2>
-        <div class="pricing-grid">
-            <div class="price-item">
-                <h3>10ml</h3>
-                <p>60 EGP</p>
-            </div>
-            <div class="price-item">
-                <h3>30ml</h3>
-                <p>200 EGP</p>
-            </div>
-            <div class="price-item">
-                <h3>50ml</h3>
-                <p>300 EGP</p>
-            </div>
-            <div class="price-item">
-                <h3>100ml</h3>
-                <p>450 EGP</p>
-            </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Shop</a>
+    <a href="#order">Order</a>
+    <a href="#ab">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Discover Your Signature Scent</h1>
+  </section>
+
+  <!-- Unified Pricing Information -->
+  <section class="section">
+    <div class="pricing-info">
+      <h3>Unified Pricing for All Perfumes</h3>
+      <div class="pricing-grid">
+        <div class="price-item">
+          <div class="size">10ml</div>
+          <div class="price">60 EGP</div>
         </div>
-    </section>
-
-    <section id="shop" class="section">
-        <h2>Our Best Sellers</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <h3>Yara</h3>
-                <p>Sweet & Vanilla</p>
-                <p>for women</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Burberry Her</h3>
-                <p>Fruity & Sweet</p>
-                <p>for women</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Stronger With You</h3>
-                <p>Vanilla & Lavender</p>
-                <p>for men</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+        <div class="price-item">
+          <div class="size">30ml</div>
+          <div class="price">200 EGP</div>
         </div>
-
-        <h2>Men's Perfume</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <h3>Lacoste White</h3>
-                <p>Fresh & Clean</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Invictus</h3>
-                <p>Fresh & Aquatic</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Bleu de Chanel</h3>
-                <p>Woody & Fresh</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Extreme</h3>
-                <p>Intense & Bold</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Le Beau Jean</h3>
-                <p>Fresh & Masculine</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Versace</h3>
-                <p>Seductive & Powerful</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>BMW</h3>
-                <p>Sporty & Dynamic</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Silver Scent</h3>
-                <p>Metallic & Fresh</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Erba Pura</h3>
-                <p>Fruity & Sweet</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+        <div class="price-item">
+          <div class="size">50ml</div>
+          <div class="price">300 EGP</div>
         </div>
-
-        <h2>Women's Perfume</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <h3>Si الحمرا</h3>
-                <p>Elegant & Sophisticated</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Love is Heavenly</h3>
-                <p>Floral & Light</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Baccarat Rouge</h3>
-                <p>Luxurious & Rich</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Oud Bouquet</h3>
-                <p>Oriental & Woody</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Musk Powder</h3>
-                <p>Soft & Powdery</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>White Oud</h3>
-                <p>Clean & Woody</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Strawberry Pound Cake</h3>
-                <p>Sweet & Gourmand</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Scandal</h3>
-                <p>Bold & Seductive</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Crazy in Love</h3>
-                <p>Passionate & Intense</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Libre</h3>
-                <p>Modern & Free</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Narcico</h3>
-                <p>Mysterious & Alluring</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Escada Moon Sparkle</h3>
-                <p>Sparkling & Joyful</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Black Opium</h3>
-                <p>Dark & Addictive</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>La Vie Est Belle</h3>
-                <p>Happy & Radiant</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>Very Sexy</h3>
-                <p>Sensual & Captivating</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <h3>مسك رمان</h3>
-                <p>Traditional & Exotic</p>
-                <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
+        <div class="price-item">
+          <div class="size">100ml</div>
+          <div class="price">450 EGP</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="order" class="section">
-        <h2>🛒 Place Your Order</h2>
+  <section class="section" id="products">
+    <h2>Our Best Sellers</h2>
+    <div class="products">
 
-        <h3>Quick Add to Cart</h3>
-        <div class="order-form">
-            <label for="perfume-select">Select Perfume:</label>
-            <select id="perfume-select">
-                <option>Choose a perfume...</option>
-                <option>Yara - Sweet & Vanilla (for women)</option>
-                <option>Burberry Her - Fruity & Sweet (for women)</option>
-                <option>Stronger With You - Vanilla & Lavender (for men)</option>
-                <option>Lacoste White - Fresh & Clean</option>
-                <option>Invictus - Fresh & Aquatic</option>
-                <option>Bleu de Chanel - Woody & Fresh</option>
-                <option>Extreme - Intense & Bold</option>
-                <option>Le Beau Jean - Fresh & Masculine</option>
-                <option>Versace - Seductive & Powerful</option>
-                <option>BMW - Sporty & Dynamic</option>
-                <option>Silver Scent - Metallic & Fresh</option>
-                <option>Erba Pura - Fruity & Sweet</option>
-                <option>Si الحمرا - Elegant & Sophisticated</option>
-                <option>Love is Heavenly - Floral & Light</option>
-                <option>Baccarat Rouge - Luxurious & Rich</option>
-                <option>Oud Bouquet - Oriental & Woody</option>
-                <option>Musk Powder - Soft & Powdery</option>
-                <option>White Oud - Clean & Woody</option>
-                <option>Strawberry Pound Cake - Sweet & Gourmand</option>
-                <option>Scandal - Bold & Seductive</option>
-                <option>Crazy in Love - Passionate & Intense</option>
-                <option>Libre - Modern & Free</option>
-                <option>Narcico - Mysterious & Alluring</option>
-                <option>Escada Moon Sparkle - Sparkling & Joyful</option>
-                <option>Black Opium - Dark & Addictive</option>
-                <option>La Vie Est Belle - Happy & Radiant</option>
-                <option>Very Sexy - Sensual & Captivating</option>
-                <option>مسك رمان - Traditional & Exotic</option>
-            </select>
+      <!-- Product 1 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTl2065fG7xXUXjOUt9TfH0pm3iGKLeo_QTgtTOt_Y7SWABqPPQJRzlnO3ZVmwMFxSpH8QNpfQ6LOQhQ6gg69mT8XL-CxMiwJEqNtsQadnFiRgaujRuqt75RQuXxWYMUxxCtB2wyONi&usqp=CAc"
+          alt="Yara">
+        <h3>Yara</h3>
+        <p>Sweet & Vanilla</p>
+        <p>for women</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Yara', 'Sweet & Vanilla - for women')">Add to Cart</button>
+      </div>
 
-            <label for="size-select">Size:</label>
-            <select id="size-select">
-                <option>10ml - 60 EGP</option>
-                <option>30ml - 200 EGP</option>
-                <option>50ml - 300 EGP</option>
-                <option>100ml - 450 EGP</option>
-            </select>
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Burberry Her">
+        <h3>Burberry Her</h3>
+        <p>Fruity & Sweet</p>
+        <p>for women</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Burberry Her', 'Fruity & Sweet - for women')">Add to Cart</button>
+      </div>
 
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" value="1" min="1">
+      <!-- Product 3 -->
+      <div class="product">
+        <img
+          src="https://www.faces.eg/dw/image/v2/BJSM_PRD/on/demandware.static/-/Sites-faces-master-catalog/default/dw62e15c51/product/3614273142588/3614273142588.jpg?sw=800&sh=800"
+          alt="Stronger With You">
+        <h3>Stronger With You</h3>
+        <p>Vanilla & Lavender</p>
+        <p>for men</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Stronger With You', 'Vanilla & Lavender - for men')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
 
-            <button class="add-to-cart-btn">Add to Cart</button>
+  <section class="section" id="products">
+    <h2>Men's Perfume</h2>
+    <div class="products">
+
+      <!-- Lacoste white -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.4892.jpg" alt="Lacoste White">
+        <h3>Lacoste White</h3>
+        <p>Fresh & Clean</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Lacoste White', 'Fresh & Clean - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Invictus -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.18471.jpg" alt="Invictus">
+        <h3>Invictus</h3>
+        <p>Fresh & Aquatic</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Invictus', 'Fresh & Aquatic - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Bleu de Chanel -->
+      <div class="product">
+        <img src="https://ramfabeauty.com/cdn/shop/files/bleu-de-chanel-edp-m-chanel-346753.jpg?v=1726723272"
+          alt="Bleu de Chanel">
+        <h3>Bleu de Chanel</h3>
+        <p>Woody & Fresh</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Bleu de Chanel', 'Woody & Fresh - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Extreme -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.77094.jpg" alt="Extreme">
+        <h3>Extreme</h3>
+        <p>Intense & Bold</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Extreme', 'Intense & Bold - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Le Beau jean -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.60095.jpg" alt="Le Beau Jean Paul Gaultier">
+        <h3>Le Beau Jean</h3>
+        <p>Fresh & Masculine</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Le Beau Jean', 'Fresh & Masculine - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Versace -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.1055.jpg" alt="Versace Eros">
+        <h3>Versace</h3>
+        <p>Seductive & Powerful</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Versace', 'Seductive & Powerful - for men')">Add to Cart</button>
+      </div>
+
+      <!-- BMW -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.85476.jpg" alt="BMW">
+        <h3>BMW</h3>
+        <p>Sporty & Dynamic</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('BMW', 'Sporty & Dynamic - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Silver scent -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.4892.jpg" alt="Silver Scent">
+        <h3>Silver Scent</h3>
+        <p>Metallic & Fresh</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Silver Scent', 'Metallic & Fresh - for men')">Add to Cart</button>
+      </div>
+
+      <!-- Erba Pura -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.44648.jpg" alt="Erba Pura">
+        <h3>Erba Pura</h3>
+        <p>Fruity & Sweet</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Erba Pura', 'Fruity & Sweet - for men')">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Women's Perfume</h2>
+    <div class="products">
+
+      <!-- Si الحمرا -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Si الحمرا">
+        <h3>Si الحمرا</h3>
+        <p>Elegant & Sophisticated</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Si الحمرا', 'Elegant & Sophisticated - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Love is heavenly -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1508182311256-0b1e3b6409c7" alt="Love is Heavenly">
+        <h3>Love is Heavenly</h3>
+        <p>Floral & Light</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Love is Heavenly', 'Floral & Light - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Baccarat rouge -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.44648.jpg" alt="Baccarat Rouge">
+        <h3>Baccarat Rouge</h3>
+        <p>Luxurious & Rich</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Baccarat Rouge', 'Luxurious & Rich - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Oud bouquet -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.44648.jpg" alt="Oud Bouquet">
+        <h3>Oud Bouquet</h3>
+        <p>Oriental & Woody</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Oud Bouquet', 'Oriental & Woody - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Musk powder -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1508182311256-0b1e3b6409c7" alt="Musk Powder">
+        <h3>Musk Powder</h3>
+        <p>Soft & Powdery</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Musk Powder', 'Soft & Powdery - for women')">Add to Cart</button>
+      </div>
+
+      <!-- White oud -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.44648.jpg" alt="White Oud">
+        <h3>White Oud</h3>
+        <p>Clean & Woody</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('White Oud', 'Clean & Woody - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Strawberry pound cake -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1508182311256-0b1e3b6409c7" alt="Strawberry Pound Cake">
+        <h3>Strawberry Pound Cake</h3>
+        <p>Sweet & Gourmand</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Strawberry Pound Cake', 'Sweet & Gourmand - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Scandal -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Scandal">
+        <h3>Scandal</h3>
+        <p>Bold & Seductive</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Scandal', 'Bold & Seductive - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Crazy in love -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1508182311256-0b1e3b6409c7" alt="Crazy in Love">
+        <h3>Crazy in Love</h3>
+        <p>Passionate & Intense</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Crazy in Love', 'Passionate & Intense - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Libre -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Libre">
+        <h3>Libre</h3>
+        <p>Modern & Free</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Libre', 'Modern & Free - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Narcico -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Narcico">
+        <h3>Narcico</h3>
+        <p>Mysterious & Alluring</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Narcico', 'Mysterious & Alluring - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Escada moon sparkle -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Escada Moon Sparkle">
+        <h3>Escada Moon Sparkle</h3>
+        <p>Sparkling & Joyful</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Escada Moon Sparkle', 'Sparkling & Joyful - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Black opium -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="Black Opium">
+        <h3>Black Opium</h3>
+        <p>Dark & Addictive</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Black Opium', 'Dark & Addictive - for women')">Add to Cart</button>
+      </div>
+
+      <!-- La vie est Belle -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.56761.jpg" alt="La Vie Est Belle">
+        <h3>La Vie Est Belle</h3>
+        <p>Happy & Radiant</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('La Vie Est Belle', 'Happy & Radiant - for women')">Add to Cart</button>
+      </div>
+
+      <!-- Very sexy -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1508182311256-0b1e3b6409c7" alt="Very Sexy">
+        <h3>Very Sexy</h3>
+        <p>Sensual & Captivating</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('Very Sexy', 'Sensual & Captivating - for women')">Add to Cart</button>
+      </div>
+
+      <!-- مسك رمان -->
+      <div class="product">
+        <img src="https://fimgs.net/mdimg/perfume-thumbs/375x500.44648.jpg" alt="مسك رمان">
+        <h3>مسك رمان</h3>
+        <p>Traditional & Exotic</p>
+        <button class="add-to-cart-btn" onclick="showAddToCartModal('مسك رمان', 'Traditional & Exotic - for women')">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section class="section order-section" id="order">
+    <h2>🛒 Place Your Order</h2>
+    
+    <!-- Quick Add Section -->
+    <div class="quick-add-section">
+      <h3>Quick Add to Cart</h3>
+      <div class="quick-add-form">
+        <div class="form-group">
+          <label for="perfume-select">Select Perfume:</label>
+          <select id="perfume-select">
+            <option value="">Choose a perfume...</option>
+            <optgroup label="Best Sellers">
+              <option value="Yara">Yara - Sweet & Vanilla (for women)</option>
+              <option value="Burberry Her">Burberry Her - Fruity & Sweet (for women)</option>
+              <option value="Stronger With You">Stronger With You - Vanilla & Lavender (for men)</option>
+            </optgroup>
+            <optgroup label="Men's Perfumes">
+              <option value="Lacoste White">Lacoste White - Fresh & Clean</option>
+              <option value="Invictus">Invictus - Fresh & Aquatic</option>
+              <option value="Bleu de Chanel">Bleu de Chanel - Woody & Fresh</option>
+              <option value="Extreme">Extreme - Intense & Bold</option>
+              <option value="Le Beau Jean">Le Beau Jean - Fresh & Masculine</option>
+              <option value="Versace">Versace - Seductive & Powerful</option>
+              <option value="BMW">BMW - Sporty & Dynamic</option>
+              <option value="Silver Scent">Silver Scent - Metallic & Fresh</option>
+              <option value="Erba Pura">Erba Pura - Fruity & Sweet</option>
+            </optgroup>
+            <optgroup label="Women's Perfumes">
+              <option value="Si الحمرا">Si الحمرا - Elegant & Sophisticated</option>
+              <option value="Love is Heavenly">Love is Heavenly - Floral & Light</option>
+              <option value="Baccarat Rouge">Baccarat Rouge - Luxurious & Rich</option>
+              <option value="Oud Bouquet">Oud Bouquet - Oriental & Woody</option>
+              <option value="Musk Powder">Musk Powder - Soft & Powdery</option>
+              <option value="White Oud">White Oud - Clean & Woody</option>
+              <option value="Strawberry Pound Cake">Strawberry Pound Cake - Sweet & Gourmand</option>
+              <option value="Scandal">Scandal - Bold & Seductive</option>
+              <option value="Crazy in Love">Crazy in Love - Passionate & Intense</option>
+              <option value="Libre">Libre - Modern & Free</option>
+              <option value="Narcico">Narcico - Mysterious & Alluring</option>
+              <option value="Escada Moon Sparkle">Escada Moon Sparkle - Sparkling & Joyful</option>
+              <option value="Black Opium">Black Opium - Dark & Addictive</option>
+              <option value="La Vie Est Belle">La Vie Est Belle - Happy & Radiant</option>
+              <option value="Very Sexy">Very Sexy - Sensual & Captivating</option>
+              <option value="مسك رمان">مسك رمان - Traditional & Exotic</option>
+            </optgroup>
+          </select>
         </div>
-
-        <h3>Your Shopping Cart</h3>
-        <div id="cart-items" class="cart-section">
-            <p>Your cart is empty. Add some perfumes to get started!</p>
+        <div class="form-group">
+          <label for="size-select">Size:</label>
+          <select id="size-select">
+            <option value="10ml">10ml - 60 EGP</option>
+            <option value="30ml">30ml - 200 EGP</option>
+            <option value="50ml">50ml - 300 EGP</option>
+            <option value="100ml">100ml - 450 EGP</option>
+          </select>
         </div>
+        <div class="form-group">
+          <label for="quantity-input">Quantity:</label>
+          <input type="number" id="quantity-input" min="1" value="1">
+        </div>
+        <button class="quick-add-btn" onclick="quickAddToCart()">Add to Cart</button>
+      </div>
+    </div>
 
-        <h3>Customer Information</h3>
-        <form class="order-form" id="order-form" action="https://formspree.io/f/myzpdbbz" method="POST">
-            <label for="full-name">Full Name *</label>
-            <input type="text" id="full-name" name="full-name" required>
+    <!-- Shopping Cart -->
+    <div class="cart-container">
+      <h3>Your Shopping Cart</h3>
+      <div id="cart-items">
+        <div class="empty-cart">
+          <p>Your cart is empty. Add some perfumes to get started!</p>
+        </div>
+      </div>
+      <div id="cart-total" class="cart-total" style="display: none;">
+        Total: <span id="total-amount">0</span> EGP
+      </div>
+    </div>
 
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required>
+    <!-- Order Form -->
+    <div class="order-form">
+      <h3>Customer Information</h3>
+      <form id="order-form">
+        <div class="form-group">
+          <label for="customer-name">Full Name *</label>
+          <input type="text" id="customer-name" name="customerName" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="customer-email">Email Address *</label>
+          <input type="email" id="customer-email" name="customerEmail" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="customer-phone">Phone Number *</label>
+          <input type="tel" id="customer-phone" name="customerPhone" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="customer-address">Delivery Address *</label>
+          <textarea id="customer-address" name="customerAddress" rows="3" required placeholder="Please provide your complete delivery address including city and area"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="order-notes">Special Notes (Optional)</label>
+          <textarea id="order-notes" name="orderNotes" rows="2" placeholder="Any special requests or notes for your order"></textarea>
+        </div>
+        
+        <button type="submit" class="submit-order-btn" id="submit-btn" disabled>
+          Submit Order
+        </button>
+      </form>
+    </div>
+  </section>
 
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required>
+  <section class="section" id="ab">
+    <h2>About Us</h2>
+    <p> At Y&S, we believe that a fragrance should be as unique as the person wearing it. Specializing in compound
+      perfumes,
+      we craft personalized scents that reflect your personality, mood, and style.
 
-            <label for="address">Delivery Address *</label>
-            <textarea id="address" name="address" rows="4" required></textarea>
+      Using high-quality ingredients and artistic blending techniques, we create perfumes that leave a lasting
+      impression
+      — whether you prefer floral, woody, spicy, or fresh notes.
 
-            <label for="notes">Special Notes (Optional)</label>
-            <textarea id="notes" name="notes" rows="4"></textarea>
+      Whether you're looking for your signature scent or a special gift, Y&S is your destination for handcrafted,
+      custom-blended perfumes made with care and creativity.</p>
+  </section>
 
-            <button type="submit">Submit Order</button>
-        </form>
-    </section>
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:yara5454088@gmail.com" target="_blank" title="Go to Email">yara5454088@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/y_s_perfume/" target="_blank"
+        title="Go to Instagram">@y_s_perfume</a></p>
+  </section>
 
-    <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>At Y&S, we believe that a fragrance should be as unique as the person wearing it. Specializing in compound perfumes, we craft personalized scents that reflect your personality, mood, and style. Using high-quality ingredients and artistic blending techniques, we create perfumes that leave a lasting impression — whether you prefer floral, woody, spicy, or fresh notes. Whether you're looking for your signature scent or a special gift, Y&S is your destination for handcrafted, custom-blended perfumes made with care and creativity.</p>
-    </section>
+  <footer>
+    &copy; 2025 Y&S Perfumes. All rights reserved.
+  </footer>
 
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:yara5454088@gmail.com">yara5454088@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/y_s_perfume/" target="_blank">@y_s_perfume</a></p>
-    </section>
+  <!-- Add to Cart Modal -->
+  <div id="add-to-cart-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%;">
+      <h3 id="modal-perfume-name">Add to Cart</h3>
+      <p id="modal-perfume-description"></p>
+      
+      <div class="form-group">
+        <label for="modal-size-select">Size:</label>
+        <select id="modal-size-select">
+          <option value="10ml">10ml - 60 EGP</option>
+          <option value="30ml">30ml - 200 EGP</option>
+          <option value="50ml">50ml - 300 EGP</option>
+          <option value="100ml">100ml - 450 EGP</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="modal-quantity-input">Quantity:</label>
+        <input type="number" id="modal-quantity-input" min="1" value="1">
+      </div>
+      
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button onclick="addToCartFromModal()" style="flex: 1; background: #28a745; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+        <button onclick="closeModal()" style="flex: 1; background: #6c757d; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Cancel</button>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2023 Y&S Perfumes. All rights reserved.</p>
-    </footer>
+  <script>
+    // Shopping cart data
+    let cart = [];
+    let currentModalPerfume = '';
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const orderForm = document.getElementById('order-form');
+    // Price mapping
+    const prices = {
+      '10ml': 60,
+      '30ml': 200,
+      '50ml': 300,
+      '100ml': 450
+    };
 
-            // Remove the event listener that prevents default submission
-            // orderForm.addEventListener('submit', (e) => {
-            //     e.preventDefault(); 
-            // });
+    // Show add to cart modal
+    function showAddToCartModal(perfumeName, description) {
+      currentModalPerfume = perfumeName;
+      document.getElementById('modal-perfume-name').textContent = perfumeName;
+      document.getElementById('modal-perfume-description').textContent = description;
+      document.getElementById('add-to-cart-modal').style.display = 'flex';
+    }
 
-            // You can keep the console.log and alert for debugging if you wish, but they are not necessary for Formspree
-            // console.log('Form Data:', data);
-            // alert('Order submitted successfully! (This is a placeholder message)');
+    // Close modal
+    function closeModal() {
+      document.getElementById('add-to-cart-modal').style.display = 'none';
+    }
+
+    // Add to cart from modal
+    function addToCartFromModal() {
+      const size = document.getElementById('modal-size-select').value;
+      const quantity = parseInt(document.getElementById('modal-quantity-input').value);
+      
+      addToCart(currentModalPerfume, size, quantity);
+      closeModal();
+    }
+
+    // Quick add to cart
+    function quickAddToCart() {
+      const perfumeSelect = document.getElementById('perfume-select');
+      const sizeSelect = document.getElementById('size-select');
+      const quantityInput = document.getElementById('quantity-input');
+      
+      if (!perfumeSelect.value) {
+        showNotification('Please select a perfume first!', 'error');
+        return;
+      }
+      
+      const perfumeName = perfumeSelect.value;
+      const size = sizeSelect.value;
+      const quantity = parseInt(quantityInput.value);
+      
+      addToCart(perfumeName, size, quantity);
+      
+      // Reset form
+      perfumeSelect.value = '';
+      quantityInput.value = 1;
+    }
+
+    // Add item to cart
+    function addToCart(perfumeName, size, quantity) {
+      const price = prices[size];
+      const itemKey = `${perfumeName}-${size}`;
+      
+      // Check if item already exists in cart
+      const existingItemIndex = cart.findIndex(item => item.key === itemKey);
+      
+      if (existingItemIndex > -1) {
+        cart[existingItemIndex].quantity += quantity;
+      } else {
+        cart.push({
+          key: itemKey,
+          name: perfumeName,
+          size: size,
+          price: price,
+          quantity: quantity
         });
-    </script>
+      }
+      
+      updateCartDisplay();
+      showNotification(`Added ${quantity}x ${perfumeName} (${size}) to cart!`);
+    }
+
+    // Update cart display
+    function updateCartDisplay() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartTotalContainer = document.getElementById('cart-total');
+      const totalAmountSpan = document.getElementById('total-amount');
+      const submitBtn = document.getElementById('submit-btn');
+      
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<div class="empty-cart"><p>Your cart is empty. Add some perfumes to get started!</p></div>';
+        cartTotalContainer.style.display = 'none';
+        submitBtn.disabled = true;
+        return;
+      }
+      
+      let cartHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        cartHTML += `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-details">${item.size} - ${item.price} EGP each</div>
+            </div>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+              <span class="quantity-display">${item.quantity}</span>
+              <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+            <div class="cart-item-price">${itemTotal} EGP</div>
+            <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+          </div>
+        `;
+      });
+      
+      cartItemsContainer.innerHTML = cartHTML;
+      totalAmountSpan.textContent = total;
+      cartTotalContainer.style.display = 'block';
+      submitBtn.disabled = false;
+    }
+
+    // Update quantity
+    function updateQuantity(index, change) {
+      cart[index].quantity += change;
+      
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      
+      updateCartDisplay();
+    }
+
+    // Remove from cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+      showNotification('Item removed from cart', 'error');
+    }
+
+    // Show notification
+    function showNotification(message, type = 'success') {
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+
+    // Handle form submission
+    document.getElementById('order-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (cart.length === 0) {
+        showNotification('Please add items to your cart before submitting!', 'error');
+        return;
+      }
+      
+      const formData = new FormData(this);
+      const customerData = {
+        name: formData.get('customerName'),
+        email: formData.get('customerEmail'),
+        phone: formData.get('customerPhone'),
+        address: formData.get('customerAddress'),
+        notes: formData.get('orderNotes')
+      };
+      
+      // Calculate total
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      
+      // Prepare order data
+      const orderData = {
+        customer: customerData,
+        items: cart,
+        total: total,
+        orderDate: new Date().toLocaleString()
+      };
+      
+      // Submit order
+      submitOrder(orderData);
+    });
+
+    // Submit order function
+    async function submitOrder(orderData) {
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting Order...';
+      
+      try {
+        const response = await fetch('/api/submit-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(orderData)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          showNotification('Order submitted successfully! You will receive a confirmation email shortly.');
+          
+          // Reset form and cart
+          document.getElementById('order-form').reset();
+          cart = [];
+          updateCartDisplay();
+        } else {
+          showNotification(result.error || 'Failed to submit order. Please try again.', 'error');
+        }
+      } catch (error) {
+        console.error('Error submitting order:', error);
+        showNotification('Network error. Please check your connection and try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Order';
+      }
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('add-to-cart-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
+
 </html>
-
-
 
